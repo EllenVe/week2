@@ -39,22 +39,27 @@ if len(sys.argv) < 2:
     print("Incorrect number of arguments.", file=sys.stderr)
     sys.exit(1)
 
-match sys.argv[1]:
-    case "mean":
-        # put your solution to the first exercise here
-        mean = "mean of x"
+command = sys.argv[1]
+    if command == "mean":
+        som = sum(x)
+        l = len(x)
+        mean = (som/l) 
         print(mean)
 
-    case "times":
-        # Put your solution to the second exercise here
+    elif command == "times":
         times_three = []
+        for i in x:
+            i *= 3
+            times_three.append(i)
         print_list(times_three)
 
-    case "even":
-        # Put your solution to the third exercise here
+    elif command == "even":
         even = []
+        for n in x:
+            if n // 2 == 0:
+                even.append(n)
         print_list(even)
 
-    case _:
+    else :
         print(f"Incorrect command {sys.argv[1]}.", file=sys.stderr)
         sys.exit(1)
